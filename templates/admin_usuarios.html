@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administración de Usuarios</title>
+</head>
+<body>
+    <h2>Administrar Usuarios</h2>
+
+    <!-- Mensajes Flash -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% for category, message in messages %}
+            <p class="{{ category }}">{{ message }}</p>
+        {% endfor %}
+    {% endwith %}
+
+    <!-- Formulario para agregar usuario -->
+    <form method="POST">
+        <input type="text" name="username" placeholder="Usuario" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="submit">Agregar Usuario</button>
+    </form>
+
+    <h3>Usuarios Registrados</h3>
+    <ul>
+        {% for usuario in usuarios %}
+            <li>{{ usuario.username }}  
+                <a href="{{ url_for('eliminar_usuario', user_id=usuario.id) }}" onclick="return confirm('¿Eliminar usuario {{ usuario.username }}?');">❌ Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+</body>
+</html>
+{% include 'footer.html' %}
+{% endblock %}

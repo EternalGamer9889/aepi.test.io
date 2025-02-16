@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-light">Archivos Subidos</h2>
+
+    {% if archivos_por_fecha %}
+        {% for fecha, archivos in archivos_por_fecha.items() %}
+            <h4 class="text-light mt-3">{{ fecha }}</h4>
+            <ul class="list-group">
+                {% for archivo in archivos %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <a href="{{ url_for('get_uploaded_file', filename=archivo.nombre) }}" download>{{ archivo.nombre }}</a>
+                        <span class="badge bg-secondary">{{ archivo.fecha }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p class="text-light">No hay archivos subidos aún.</p>
+    {% endif %}
+
+    <a href="{{ url_for('logout') }}" class="btn btn-danger mt-3">Cerrar Sesión</a>
+</div>
+{% include 'footer.html' %}
+{% endblock %}
+

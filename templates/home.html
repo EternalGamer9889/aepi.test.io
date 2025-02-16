@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h1 class="display-4 fw-bold text-light mb-3">A.E.P.I.</h1>
+        <p class="lead text-light">
+          Asociación Estudiantil Para la Inovación
+        </p>
+      </div>
+    </div>
+  </div>
+  
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{ url_for('static', filename='images/home/carrusel_1.jpg') }}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Instituto Tecnológico de Veracruz</h5>
+          <p>Nuestra institución.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='images/home/carrusel_2.jpg') }}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Misión</h5>
+          <p>Impulsar de manera integra el desarrollo estudiantil y la colaboración entre carreras para la realización de 
+            proyectos innovadores que aporten al avance tecnológico en la región.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url_for('static', filename='images/home/carrusel_3.jpg') }}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Visión</h5>
+          <p>Movernos hacia una institución educativa reconocida y destacada en la innovación tecnológica, con un alto nivel
+             de calidad y trabajo en el campo de la ingeniería.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="container mt-5">
+    <div class="content-box">
+      <!-- Texto -->
+      <div class="text-content">
+        <h4>Bienvenidos a nuestra página principal</h4>
+        <p>
+          Somos una asociación estudiantil que trabaja en pro de la inovación tecnológica. Apoyamos los
+          proyectos del alumnado a traves de una linea de apoyo, incentivos y asesoramiento tecnico para
+          realizarlos.
+        </p>
+      </div>
+      
+      <!-- Imagen -->
+      <img src="{{ url_for('static', filename='images/home/imagen_caja.png') }}" alt="..." height="100" width="auto" style="position: relative; left: 80px;">
+      <img src="{{ url_for('static', filename='images/home/imagen_caja_2.png') }}" alt="..." height="100" width="auto">
+    </div>
+  </div>
+  
+  <style>
+    .content-box {
+      border: 2px solid #ccc; /* Borde de la caja */
+      padding: 20px; /* Espaciado interno */
+      border-radius: 8px; /* Bordes redondeados */
+      display: flex; /* Para que texto e imagen estén en una fila */
+      align-items: center; /* Alineación vertical */
+      justify-content: space-between; /* Separar la imagen del texto */
+      background-color: white; /* Fondo blanco */
+    }
+  
+    .content-box img {
+      max-width: 40%; /* Limitar el tamaño de la imagen */
+      border-radius: 8px; /* Bordes redondeados para la imagen */
+    }
+  
+    .content-box .text-content {
+      max-width: 55%; /* Limitar el tamaño del texto */
+    }
+  </style>
+  
+  
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card text-center shadow-lg p-4">
+          <h2 class="card-title mb-3">Envia tu proyecto</h2>
+          <p class="card-text">
+            En la sección de "Recepción de proyectos" puedes enviar tu proyecto para ser evaluado por nuestros colaboradores.
+            Seras contactado o retroalimentado para continuar con tu proyecto, ya sea relizando correcciónes o cambiando tu 
+            enfoque para un mejor aprovechamiento de tu potencial.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    
+    {% include 'footer.html' %}
+{% endblock %}
+

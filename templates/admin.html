@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Panel de Administración</title>
+</head>
+<body>
+    <h2>Archivos Subidos</h2>
+    <ul>
+        {% for archivo in archivos %}
+            <li>{{ archivo }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+</body>
+</html>
+{% include 'footer.html' %}
+{% endblock %}

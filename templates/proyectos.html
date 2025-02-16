@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h1 class="display-4 fw-bold text-light mb-3">Proyectos realizados</h1>
+        <p class="lead text-light">
+          Conoce los proyectos que formaron parte del proceso.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="{{ url_for('static', filename='images/proyectos/proyecto_001.JPG') }}" class="card-img-top" alt="...">
+  
+    <div class="card-body">
+      <h5 class="card-title">PROYECTO 001</h5>
+      <p class="card-text">Este apartado y la imagen son unicamente contenido de prueba.</p>
+    </div>
+  </div>
+{% include 'footer.html' %}
+{% endblock %}

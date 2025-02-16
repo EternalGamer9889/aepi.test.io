@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="display-4 fw-bold text-light mb-3">Documentación</h1>
+            <p class="lead text-light">
+                Lee nuestras normas y condiciones de uso.
+            </p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="box p-4" style="background-color: #f8f9fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <!-- Título y descripción -->
+                    <div>
+                        <h2 class="fw-bold text-dark">Normativa</h2>
+                        <p class="text-muted">
+                            A continuación, puedes acceder al documento para su consulta. Haz clic en el botón para ver o descargar el archivo.
+                        </p>
+                    </div>
+
+                    <!-- Imagen al costado derecho -->
+                    <div>
+                        <img src="{{ url_for('static', filename='images/documentacion/foto_representativa.png') }}" alt="Imagen Representativa" class="card-img-top">
+                    </div>
+                </div>
+
+                <!-- Enlace para ver el archivo -->
+                <a href="{{ url_for('static', filename='docs/archivo1.pdf') }}" class="btn btn-primary btn-lg" target="_blank">
+                    Ver Documento
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+{% endblock %}
+
+
+
